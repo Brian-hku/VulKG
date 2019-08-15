@@ -1,0 +1,156 @@
+@prefix : <http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl> .
+
+<http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#affactPlatform
+:affactPlatform rdf:type owl:ObjectProperty ;
+                rdfs:domain :Vulnerability ;
+                rdfs:range :Platform .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasCWE
+:hasCWE rdf:type owl:ObjectProperty ;
+        rdfs:domain :Vulnerability ;
+        rdfs:range :Weakness .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasAccessComplexity
+:hasAccessComplexity rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Vulnerability ;
+                     rdfs:range xsd:string .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasAccessVector
+:hasAccessVector rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Vulnerability ;
+                 rdfs:range xsd:string .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasAuthentication
+:hasAuthentication rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Vulnerability ;
+                   rdfs:range xsd:string .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasAvailabilityImpact
+:hasAvailabilityImpact rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Vulnerability ;
+                       rdfs:range xsd:string .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasBaseScore
+:hasBaseScore rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Vulnerability ;
+              rdfs:range xsd:float .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasConfidentialityImpact
+:hasConfidentialityImpact rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Vulnerability ;
+                          rdfs:range xsd:string .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasExploitabilityScore
+:hasExploitabilityScore rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Vulnerability ;
+                        rdfs:range xsd:float .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasImpactScore
+:hasImpactScore rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Vulnerability ;
+                rdfs:range xsd:float .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasIntegrityImpact
+:hasIntegrityImpact rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Vulnerability ;
+                    rdfs:range xsd:string .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasObtainAllPrivilege
+:hasObtainAllPrivilege rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Vulnerability ;
+                       rdfs:range xsd:boolean .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasObtainOtherPrivilege
+:hasObtainOtherPrivilege rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Vulnerability ;
+                         rdfs:range xsd:boolean .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasObtainUserPrivilege
+:hasObtainUserPrivilege rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Vulnerability ;
+                        rdfs:range xsd:boolean .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasSeverity
+:hasSeverity rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Vulnerability ;
+             rdfs:range xsd:float .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#hasUserInteractionRequired
+:hasUserInteractionRequired rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Vulnerability ;
+                            rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#Application
+:Application rdf:type owl:Class ;
+             rdfs:subClassOf :Product .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#Hardware
+:Hardware rdf:type owl:Class ;
+          rdfs:subClassOf :Product .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#OperatingSystem
+:OperatingSystem rdf:type owl:Class ;
+                 rdfs:subClassOf :Product .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#Platform
+:Platform rdf:type owl:Class .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#Product
+:Product rdf:type owl:Class ;
+         rdfs:subClassOf :Platform .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#Vendor
+:Vendor rdf:type owl:Class ;
+        rdfs:subClassOf :Platform .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#Vulnerability
+:Vulnerability rdf:type owl:Class .
+
+
+###  http://github.com/Brian-hku/VulKG/blob/master/VulOntology.owl#Weakness
+:Weakness rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi
